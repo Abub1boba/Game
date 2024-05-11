@@ -1,32 +1,35 @@
 using UnityEngine;
 
-public class motion : MonoBehaviour
+public class Motion : MonoBehaviour
 {
     [SerializeField] private CharacterController physic;
     [SerializeField] private float speed;
     [SerializeField] private Animator animator;
-    private Vector3 input;
-    private Camera camera;
+    [SerializeField] new private Camera camera;
+    private void Start() => camera = Camera.main;
 
-    private void Start()
+    public void Move(Vector3 motion)
     {
-        camera = Camera.main;
+        if (motion.sqrMagnitude > 0.0f)
+        {
+            Movement(motion);
+            UpdateSpeed(physic.velocity.magnitude);
+        }
+        else
+        {
+            UpdateSpeed(0);
+        }
     }
 
-    void Update()
+    private void Movement(Vector3 motion)
     {
+        var cameraMove = camera.transform.TransformDirection(motion);
+        cameraMove.y = 0;
+        cameraMove.Normalize();
 
-        var horizontal = Input.GetAxis("Horizontal");
-        var vertical = Input.GetAxis("Vertical");
-
-        input = new Vector3 (horizontal, 0, vertical);
-
-        Vector3 cameramove = camera.transform.TransformDirection(input);
-        cameramove.y = 0;
-        cameramove.Normalize();
-        transform.forward = cameramove;
-
-        physic.Move(cameramove * speed * Time.deltaTime);
-        animator.SetFloat("Speed", physic.velocity.magnitude);
+        transform.forward = cameraMove;
+        physic.Move(cameraMove * speed * Time.deltaTime);
     }
+
+    private void UpdateSpeed(float speed) => animator.SetFloat("Speed", speed);
 }
