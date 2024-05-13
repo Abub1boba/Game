@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] private float StartHealth;
+
     private float currentHealth;
 
     public float MaxHealth => StartHealth;
