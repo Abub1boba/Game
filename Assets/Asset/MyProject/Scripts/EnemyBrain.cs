@@ -13,6 +13,7 @@ public class EnemyBrain : MonoBehaviour
     {
         player = FindAnyObjectByType<Player>();
         attacker.SetWeapon(role.weapon);
+        health.SetStartHealth(role.startHealth);
     }
 
     private void Update()

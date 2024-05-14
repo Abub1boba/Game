@@ -2961,6 +2961,12 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 4410884479083155644, guid: 71e4bc1d91843dd44ac0290bb3327280,
+        type: 3}
+      propertyPath: blood
+      value: 
+      objectReference: {fileID: 8831733276394222968, guid: bae05b4e0757645438043ab73360fafe,
+        type: 3}
     - target: {fileID: 9202982842459573563, guid: 71e4bc1d91843dd44ac0290bb3327280,
         type: 3}
       propertyPath: hand
@@ -2978,6 +2984,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e581b5bc799cd0a4abe1b065a42a8344,
         type: 2}
+    - target: {fileID: 9202982842459573563, guid: 71e4bc1d91843dd44ac0290bb3327280,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9202982842459573563, guid: 71e4bc1d91843dd44ac0290bb3327280,
         type: 3}
       propertyPath: attackCoolDown

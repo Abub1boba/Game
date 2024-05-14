@@ -3,7 +3,7 @@ using UnityEngine;
 public class Attacker : MonoBehaviour
 {
     private bool CanAttack => attackTime <= 0;
-    public bool AttackProcess => StaticData.playerRole.weapon.attackCoolDown - attackTime <= StaticData.playerRole.weapon.AttackTime;
+    public bool AttackProcess => StaticData.playerRole.weapon.attackCoolDown - attackTime <= StaticData.playerRole.weapon.MoveTime;
     [SerializeField] private LayerMask AttackMask;
     [SerializeField] private Animator animator;
     [SerializeField] private Vector3 WeaponRange;
@@ -15,8 +15,9 @@ public class Attacker : MonoBehaviour
 
     public void SetWeapon(Weapon Weapon)
     {
-        StaticData.playerRole.weapon = Weapon;
-        Instantiate(StaticData.playerRole.weapon.prefab, hand);
+        Instantiate(Weapon.prefab, hand);
+
+        if (Weapon.controller != null) animator.runtimeAnimatorController = Weapon.controller;
     }
 
     public void Attack()

@@ -11,7 +11,11 @@ public class Player : MonoBehaviour
 
     public bool IsDead => health.IsDead;
 
-    private void Awake() => attacker.SetWeapon(StaticData.playerRole.weapon);
+    private void Awake()
+    {
+        attacker.SetWeapon(StaticData.playerRole.weapon);
+        health.SetStartHealth(StaticData.playerRole.startHealth);
+    }
 
     private void Update()
     {

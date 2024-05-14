@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612bee9be309e39419aa1b0d1cb689e3, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  AttackTime: 1.9
-  damage: 35
-  attackCoolDown: 2.5
-  range: 0.8
-  prefab: {fileID: 6288338022832421623, guid: 42fb08298a299b04d98a8e47fd92be13, type: 3}
+  <MoveTime>k__BackingField: 1.95
+  <damage>k__BackingField: 35
+  <attackCoolDown>k__BackingField: 2.5
+  <range>k__BackingField: 1
+  <prefab>k__BackingField: {fileID: 6288338022832421623, guid: 42fb08298a299b04d98a8e47fd92be13,
+    type: 3}
+  <controller>k__BackingField: {fileID: 22100000, guid: da5237d6c3e06044aa00d7e333927a90,
+    type: 2}

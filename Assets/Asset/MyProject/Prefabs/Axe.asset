@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612bee9be309e39419aa1b0d1cb689e3, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  AttackTime: 0.9
-  damage: 25
-  attackCoolDown: 1.2
-  range: 0.68
-  prefab: {fileID: 3073587407428865333, guid: 6cd1ac9652a50da4485a86492f47c63d, type: 3}
+  <MoveTime>k__BackingField: 0.9
+  <damage>k__BackingField: 25
+  <attackCoolDown>k__BackingField: 1.2
+  <range>k__BackingField: 0.8
+  <prefab>k__BackingField: {fileID: 3073587407428865333, guid: 6cd1ac9652a50da4485a86492f47c63d,
+    type: 3}
+  <controller>k__BackingField: {fileID: 22100000, guid: ba98ee3a3a5079f41800ade552604021,
+    type: 2}
