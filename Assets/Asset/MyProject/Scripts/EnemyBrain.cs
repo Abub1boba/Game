@@ -1,16 +1,19 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EnemyBrain : MonoBehaviour
 {
     [SerializeField] private Attacker attacker;
     [SerializeField] private EnemyMove mover;
     [SerializeField] private Health health;
-    private float timeToDestroy = 5;
+    [SerializeField] private Role role;
 
     private Player player;
 
-    private void Start() => player = FindAnyObjectByType<Player>();
+    private void Start()
+    {
+        player = FindAnyObjectByType<Player>();
+        attacker.SetWeapon(role.weapon);
+    }
 
     private void Update()
     {

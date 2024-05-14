@@ -7,14 +7,12 @@ public class Health : MonoBehaviour
     public event Action<Health> OnHealthChange;
 
     [SerializeField] private Animator animator;
-    [SerializeField] private float StartHealth;
-
     private float currentHealth;
 
-    public float MaxHealth => StartHealth;
+    public float MaxHealth => StaticData.playerRole.startHealth;
     public float CurrentHealth => currentHealth;
 
-    private void Start() => currentHealth = StartHealth;
+    private void Start() => currentHealth = StaticData.playerRole.startHealth;
 
     public void TakeDamage(float damage)
     {

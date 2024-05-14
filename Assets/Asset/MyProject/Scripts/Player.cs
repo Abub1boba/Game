@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     public bool IsDead => health.IsDead;
 
+    private void Awake() => attacker.SetWeapon(StaticData.playerRole.weapon);
+
     private void Update()
     {
         if (timeToRestart <= 0) SceneManager.LoadScene(2);
